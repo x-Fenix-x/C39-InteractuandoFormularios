@@ -19,16 +19,37 @@
             <ul class="errores"></ul>
             <form class="form" action="/movies/create" method="POST">
                 <label for="title">Titulo </label>
-                <div><input type="text" name="title" id="title"></div>
-                <label for="rating">Calificación </label>
-                <div><input type="number" name="rating" id="rating" placeholder="Indicar valor entre 0 y 10"> </div>
-                <label for="awards">Premios </label>
-                <div><input type="number" name="awards" id="awards" placeholder="Indicar valor entre 0 y 10"></div>
-                <label for="release_date">Fecha de creación </label>
-                <div><input type="date" name="release_date" id="release_date"></div>
+                <div>
+                    <input type="text" name="title" id="title">
+                    <p hidden style="background-color: greenyellow; color: green;" id="msg-title">Ingrese título</p>
+                    <p style="background-color: palevioletred; color: crimson;" id="error-title"></p>
+                </div>
+                <label for="rating">Rating</label>
+                <div>
+                    <input type="number" name="rating" id="rating" placeholder="Indicar valor entre 0 y 10">
+                    <p hidden style="background-color: greenyellow; color: green;" id="msg-rating">Ingrese rating</p>
+                    <p style="background-color: palevioletred; color: crimson;" id="error-rating"></p>
+                </div>
+                <label for="awards">Premios</label>
+                <div>
+                    <input type="number" name="awards" id="awards" placeholder="Indicar valor entre 0 y 10">
+                    <p hidden style="background-color: greenyellow; color: green;" id="msg-awards">Ingrese premios</p>
+                    <p style="background-color: palevioletred; color: crimson;" id="error-awards"></p>
+                </div>
+                <label for="release_date">Fecha de creación</label>
+                <div>
+                    <input type="date" name="release_date" id="release_date">
+                    <p hidden style="background-color: greenyellow; color: green;" id="msg-release_date">Ingrese fecha
+                    </p>
+                    <p style="background-color: palevioletred; color: crimson;" id="error-release_date"></p>
+                </div>
                 <label for="length">Duración </label>
-                <div><input type="number" name="length" id="length"
-                        placeholder="Indicar duración entre 60 y 360 minutos"></div>
+                <div>
+                    <input type="number" name="length" id="length"
+                        placeholder="Indicar duración entre 60 y 360 minutos">
+                    <p hidden style="background-color: greenyellow; color: green;" id="msg-length">Ingrese duración</p>
+                    <p style="background-color: palevioletred; color: crimson;" id="error-length"></p>
+                </div>
                 <label for="genreID">Género </label>
                 <div>
                     <select name="genre_id" id="genre_id">
@@ -41,6 +62,10 @@
                     </select>
                 </div>
                 <br>
+                <ul id="box-errors">
+
+                </ul>
+                <br>
                 <div> <button class="botonAgregar" type="submit">Agregar</button>
 
                     <a class="botonVolver" href="/movies">Listado de Películas</a>
@@ -48,7 +73,7 @@
             </form>
         </article>
     </section>
-    <script src="/public/js/moviesAddValidation.js"></script>
+    <script src="/js/moviesAddValidation.js"></script>
 </body>
 
 </html>
